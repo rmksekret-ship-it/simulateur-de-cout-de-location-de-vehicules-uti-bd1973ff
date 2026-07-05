@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de Coût de Location de Véhicules Utilitaires en Argentine | Estimez vos coûts de location</title>
+    <meta name="description" content="Comparez les coûts de location de différents types de véhicules utilitaires (camionnettes, fourgons) pour des besoins professionnels en Argentine. Obtenez des estimations précises basées sur la durée, le kilométrage, le type de véhicule et les assurances.">
+    <style>
+        :root {
+            --primary-bg: #222831;
+            --secondary-bg: #393E46;
+            --text-color: #EEEEEE;
+            --accent-color: #00ADB5;
+            --border-color: #6D6D6D;
+            --font-family-headline: 'Arial Black', sans-serif;
+            --font-family-body: 'Arial', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family-body);
+            color: var(--text-color);
+            background-color: var(--primary-bg);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: var(--secondary-bg);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-family: var(--font-family-headline);
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            color: #BBBBBB;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        section {
+            background-color: var(--secondary-bg);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-family: var(--font-family-headline);
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #DDDDDD;
+        }
+
+        input[type="number"],
+        select {
+            width: calc(100% - 20px);
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 8px;
+            background: var(--primary-bg);
+            border-radius: 5px;
+            outline: none;
+            margin-top: 0.5rem;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            cursor: pointer;
+            border: 2px solid var(--text-color);
+        }
+
+        button#tool-submit {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--accent-color);
+            color: var(--primary-bg);
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button#tool-submit:hover {
+            background-color: #007B80;
+        }
+
+        #tool-result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--primary-bg);
+            border: 1px solid var(--accent-color);
+            border-radius: 5px;
+            min-height: 150px;
+        }
+
+        #tool-result h3 {
+            color: var(--accent-color);
+            font-family: var(--font-family-headline);
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        #tool-result p {
+            margin-bottom: 0.5rem;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: bold;
+            color: #DDDDDD;
+        }
+
+        .result-value {
+            color: var(--text-color);
+        }
+
+        .tips-section {
+            background-color: var(--secondary-bg);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tips-section h2 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .tips-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-section li {
+            background-color: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .tips-section li:before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 0.8rem;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: var(--primary-bg);
+            color: #BBBBBB;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .seo-section {
+            background-color: var(--primary-bg);
+            color: #AAAAAA;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .seo-section h2 {
+            font-family: var(--font-family-headline);
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .seo-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: justify;
+        }
+
+        .seo-section ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .seo-section li {
+            display: inline-block;
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://simulateur-de-cout-de-location-de-vehicules-uti-bd1973ff.onrender.com">
+    <meta property="og:title" content="Simulateur de Coût de Location de Véhicules Utilitaires en Argentine">
+    <meta property="og:description" content="Comparez les coûts de location de différents types de véhicules utilitaires (camionnettes, fourgons) pour des besoins professionnels en Argentine. Obtenez des estimations précises basées sur la durée, le kilométrage, le type de véhicule et les assurances.">
+    <meta property="og:url" content="https://simulateur-de-cout-de-location-de-vehicules-uti-bd1973ff.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Simulateur de Coût de Location de Véhicules Utilitaires en Argentine", "description": "Comparez les coûts de location de différents types de véhicules utilitaires (camionnettes, fourgons) pour des besoins professionnels en Argentine. Obtenez des estimations précises basées sur la durée, le kilométrage, le type de véhicule et les assurances.", "url": "https://simulateur-de-cout-de-location-de-vehicules-uti-bd1973ff.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="simulateur-de-cout-de-location-de-vehicules-uti-bd1973ff" data-runtime-mode="insurance_estimator">
+    <header>
+        <h1>Simulateur de Coût de Location de Véhicules Utilitaires en Argentine</h1>
+        <p class="summary">Optimisez vos dépenses professionnelles en Argentine. Calculez les coûts estimés pour la location de camionnettes et fourgons, en tenant compte de la durée, du kilométrage et des options d'assurance.</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Estimez vos coûts de location</h2>
+            <form id="tool-form">
+                <div class="form-group">
+                    <label for="duration">Durée de location (jours)</label>
+                    <input type="number" id="duration" name="duration" min="1" max="365" value="7" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mileage">Kilométrage estimé (km)</label>
+                    <input type="range" id="mileage" name="mileage" min="50" max="5000" value="500">
+                    <span id="mileage-value">500 km</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicle-type">Type de véhicule</label>
+                    <select id="vehicle-type" name="vehicle-type" required>
+                        <option value="van-small">Fourgonnette (ex: Kangoo)</option>
+                        <option value="van-medium">Fourgon moyen (ex: Partner/Berlingo)</option>
+                        <option value="pickup-small">Pick-up léger (ex: Saveiro/Montana)</option>
+                        <option value="pickup-medium">Pick-up moyen (ex: Hilux/Amarok)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="insurance">Niveau d'assurance</label>
+                    <select id="insurance" name="insurance" required>
+                        <option value="basic">Standard (tiers)</option>
+                        <option value="full">Complète (tous risques)</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="tool-submit" data-affiliate-slot="calculate-cost">Calculer le coût estimé</button>
+            </form>
+
+            <div id="tool-result">
+                <h3 id="result-headline">Votre estimation budgétaire</h3>
+                <p>Veuillez remplir le formulaire ci-dessus pour obtenir une estimation détaillée.</p>
+            </div>
+        </section>
+
+        <section class="tips-section">
+            <h2>Conseils pour la Location en Argentine</h2>
+            <ul>
+                <li>
+                    <strong>Vérifiez les kilomètres inclus :</strong> Assurez-vous de comprendre les limites de kilométrage et les coûts supplémentaires en cas de dépassement.
+                </li>
+                <li>
+                    <strong>Comprenez l'assurance :</strong> Les routes argentines peuvent être exigeantes. Une bonne couverture est cruciale.
+                </li>
+                <li>
+                    <strong>Demandez un devis détaillé :</strong> Incluez les frais de péage, les taxes et le carburant pour une image complète.
+                </li>
+                <li>
+                    <strong>Planifiez à l'avance :</strong> Surtout pendant les périodes de forte demande, la réservation anticipée assure une meilleure disponibilité et des tarifs potentiellement inférieurs.
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <section class="seo-section">
+        <h2>Optimiser vos Coûts de Location de Véhicules Utilitaires en Argentine</h2>
+        <p>Pour les entreprises et professionnels indépendants en Argentine, la gestion efficace des coûts de transport est primordiale. Notre simulateur vous aide à anticiper les dépenses liées à la location de véhicules utilitaires, qu'il s'agisse de camionnettes compactes ou de pick-ups robustes, essentiels pour la logistique et les opérations quotidiennes. Que votre activité se situe à Buenos Aires, Córdoba, Rosario ou ailleurs dans le pays, une planification budgétaire précise est la clé d'une gestion financière saine. Évitez les surprises et prenez des décisions éclairées pour vos besoins de flotte temporaire ou à long terme.</p>
+        <p>La transparence des coûts est notre priorité. Comparez facilement les options en fonction de la durée de votre projet, du kilométrage prévu et du type de véhicule le plus adapté à vos marchandises ou équipements. L'intégration des différentes options d'assurance vous permet également de mesurer l'impact de cette protection indispensable sur votre budget total. Notre outil est conçu pour vous offrir une vue d'ensemble claire, vous permettant de choisir la solution de location la plus avantageuse et sécurisée pour votre entreprise en Argentine.</p>
+        <ul>
+            <li>Location camionnette Argentine</li>
+            <li>Coût location utilitaire Buenos Aires</li>
+            <li>Prix location fourgon Córdoba</li>
+            <li>Simulateur location pick-up Rosario</li>
+            <li>Comparateur location véhicules professionnels Argentine</li>
+            <li>Tarifs location flotte entreprise</li>
+            <li>Assurance location utilitaire Argentine</li>
+            <li>Kilométrage location véhicule commercial</li>
+            <li>Location transport marchandises Argentine</li>
+            <li>Devis location camionnette travail</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Simulateur de Coût Utilitaires. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const durationInput = document.getElementById('duration');
+            const mileageInput = document.getElementById('mileage');
+            const mileageValueSpan = document.getElementById('mileage-value');
+            const vehicleTypeSelect = document.getElementById('vehicle-type');
+            const insuranceSelect = document.getElementById('insurance');
+            const form = document.getElementById('tool-form');
+            const resultDiv = document.getElementById('tool-result');
+
+            // Update mileage value display
+            mileageInput.addEventListener('input', () => {
+                mileageValueSpan.textContent = `${mileageInput.value} km`;
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const duration = parseInt(durationInput.value);
+                const mileage = parseInt(mileageInput.value);
+                const vehicleType = vehicleTypeSelect.value;
+                const insurance = insuranceSelect.value;
+
+                // Base rates in ARS per day (fictional but representative)
+                const baseRates = {
+                    'van-small': 8000,   // Renault Kangoo
+                    'van-medium': 12000, // Peugeot Partner / Citroën Berlingo
+                    'pickup-small': 10000, // VW Saveiro / Fiat Strada
+                    'pickup-medium': 18000 // Toyota Hilux / Ford Ranger
+                };
+
+                // Per km cost after a certain free mileage (fictional)
+                const kmRates = {
+                    'van-small': 25,
+                    'van-medium': 35,
+                    'pickup-small': 30,
+                    'pickup-medium': 45
+                };
+
+                // Free km per day (fictional)
+                const freeKmPerDay = 100;
+
+                // Insurance multipliers (fictional)
+                const insuranceMultipliers = {
+                    'basic': 1.0,
+                    'full': 1.35
+                };
+
+                // Calculate base cost
+                let dailyRate = baseRates[vehicleType] || 0;
+                let totalBaseCost = dailyRate * duration;
+
+                // Calculate mileage cost
+                let totalFreeKm = freeKmPerDay * duration;
+                let excessKm = Math.max(0, mileage - totalFreeKm);
+                let totalMileageCost = excessKm * (kmRates[vehicleType] || 0);
+
+                // Apply insurance
+                let totalCostBeforeInsurance = totalBaseCost + totalMileageCost;
+                let finalCost = totalCostBeforeInsurance * (insuranceMultipliers[insurance] || 1.0);
+
+                // Add a small VAT or administrative fee (fictional)
+                let vatAndAdmin = finalCost * 0.21; // 21% VAT + some admin
+                finalCost += vatAndAdmin;
+
+                // Render result
+                resultDiv.innerHTML = `
+                    <h3>Votre estimation budgétaire détaillée</h3>
+                    <div class="result-item">
+                        <span class="result-label">Type de véhicule:</span>
+                        <span class="result-value">${vehicleTypeSelect.options[vehicleTypeSelect.selectedIndex].text}</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Durée de location:</span>
+                        <span class="result-value">${duration} jours</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Kilométrage total:</span>
+                        <span class="result-value">${mileage} km</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Coût de base (${duration} jours):</span>
+                        <span class="result-value">ARS ${totalBaseCost.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Coût kilométrage excédentaire:</span>
+                        <span class="result-value">ARS ${totalMileageCost.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Assurance (${insuranceSelect.options[insuranceSelect.selectedIndex].text}):</span>
+                        <span class="result-value">x ${insuranceMultipliers[insurance].toFixed(2)}</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">TVA & Frais administratifs:</span>
+                        <span class="result-value">ARS ${vatAndAdmin.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    </div>
+                    <hr style="border-color: var(--border-color); margin: 1rem 0;">
+                    <div class="result-item">
+                        <span class="result-label"><strong>Coût total estimé:</strong></span>
+                        <span class="result-value"><strong>ARS ${finalCost.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></span>
+                    </div>
+                    <p style="font-size: 0.9em; color: #aaa; margin-top: 1rem;">Cette estimation est indicative et peut varier selon le fournisseur et les conditions spécifiques du marché en Argentine.</p>
+                `;
+            });
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.removeAttribute("rel");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    const currentValue = normalize(field.value);
+    if (tag === "select") {
+      if (currentValue) return;
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      if (currentValue) return;
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      if (currentValue) return;
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      if (currentValue) return;
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      if (currentValue) return;
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      if (currentValue) return;
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      if (currentValue) return;
+      field.value = sampleNumber(field);
+      return;
+    }
+    if (currentValue) return;
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "Result area was not found.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Native form submission updated the result area.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "Result area did not render usable output.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Primary tool form was not found.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
