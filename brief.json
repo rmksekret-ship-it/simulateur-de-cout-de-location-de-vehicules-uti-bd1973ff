@@ -1,0 +1,306 @@
+{
+  "run_id": "run-1783228966701",
+  "job_index": 2,
+  "params": {
+    "owner_user_id": "user-1774825923424-663",
+    "owner_username": "inso",
+    "owner_display_name": "Inso",
+    "count": 5,
+    "archetype": "calculator",
+    "market": "Argentina",
+    "language": "es",
+    "country": "FR",
+    "brief": "Obtenez des estimations précises basées sur la durée, le kilométrage, le type de véhicule et les assurances p…",
+    "notes": "Comparez les coûts de location de différents types de véhicules utilitaires (camionnettes, fourgons) pour des besoins professionnels en Argentine.\nS'adresse aux entreprises et indépendants en Argentine ayant besoin de solutions de transport flexibles. L'objectif est de fournir une clarté budgétaire pour la location.",
+    "import_notes": "",
+    "growth_job_id": "",
+    "growth_slug": "",
+    "growth_kind": "",
+    "external_site_request_id": "",
+    "external_client_ref": "",
+    "external_source_label": "",
+    "dashboard_mode": "builder",
+    "network_site_format": "forum",
+    "network_primary_topic": "",
+    "network_primary_geo": "",
+    "network_domain_pool": "",
+    "network_hosting_pool": "",
+    "network_dns_strategy": "auto_pool_assign",
+    "network_domain_flow": "manual",
+    "network_content_strategy": "",
+    "network_model_concept": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_seo": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_build": "google/gemini-2.5-flash",
+    "network_model_qa": "anthropic/claude-haiku-4.5",
+    "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
+    "network_blueprint_id": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "render",
+    "requested_publish_target": "render",
+    "provider_space_id": "new-sites",
+    "provider_space_name": "New Sites",
+    "allow_url_fallback": false,
+    "railway_project_id_override": "",
+    "railway_environment_id_override": "",
+    "railway_service_id_override": "",
+    "railway_service_name_override": "",
+    "github_repo_private": false,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "mixed batch",
+    "archetype_mix": [
+      "calculator",
+      "tool",
+      "generator"
+    ],
+    "forced_design_theme": "atlas-corporate",
+    "forced_structure_preset": "quick-compare-strip",
+    "site_idea_title": "Simulateur de Coût de Location de Véhicules Utilitaires en Argentine",
+    "site_idea_summary": "Comparez les coûts de location de différents types de véhicules utilitaires (camionnettes, fourgons) pour des besoins professionnels en Argentine."
+  },
+  "site_spec": {
+    "slug": "simulateur-de-cout-de-location-de-vehicules-uti-bd1973ff",
+    "theme": {
+      "name": "Atlas Corporate",
+      "slug": "atlas-corporate",
+      "eyebrow": "Trust Heavy",
+      "family": "atlas-corporate",
+      "moods": [
+        "professional",
+        "stable",
+        "corporate",
+        "trust"
+      ],
+      "archetypes": [
+        "calculator",
+        "tool",
+        "generator"
+      ],
+      "niches": [
+        "insurance",
+        "loans",
+        "finance",
+        "property",
+        "business services"
+      ],
+      "keywords": [
+        "quote",
+        "budget",
+        "finance",
+        "compare",
+        "advisor"
+      ],
+      "token_index": [
+        "advisor",
+        "atlas",
+        "budget",
+        "business",
+        "calculator",
+        "compare",
+        "corporate",
+        "finance",
+        "generator",
+        "heavy",
+        "insurance",
+        "loans",
+        "professional",
+        "property",
+        "quote",
+        "services",
+        "stable",
+        "tool",
+        "trust"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap",
+      "display_font": "\"Merriweather\", serif",
+      "body_font": "\"Source Sans 3\", sans-serif",
+      "layout": "split",
+      "card_style": "glass",
+      "button_style": "gradient",
+      "decor_style": "ribbons",
+      "hero_template": "1.08fr 0.92fr",
+      "seo_template": "1.18fr 0.82fr",
+      "feature_columns": 3,
+      "faq_columns": 3,
+      "hero_min_height": "78vh",
+      "panel_radius": "28px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "16px",
+      "palette": {
+        "bg": "linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%)",
+        "surface": "rgba(255,255,255,0.94)",
+        "surface_border": "rgba(23,37,84,0.12)",
+        "text": "#172554",
+        "muted": "#475569",
+        "accent": "#1d4ed8",
+        "accent_alt": "#f59e0b",
+        "hero_glow": "rgba(29, 78, 216, 0.1)",
+        "button_text": "#f8fafc",
+        "panel_alt": "rgba(248,250,252,0.92)",
+        "shadow": "0 22px 60px rgba(37, 99, 235, 0.08)",
+        "input_fill": "rgba(15,23,42,0.03)"
+      }
+    },
+    "structure": {
+      "name": "Quick Compare Strip",
+      "slug": "quick-compare-strip",
+      "hero_variant": "tool-first",
+      "proof_variant": "metrics",
+      "section_order": [
+        "proof",
+        "features",
+        "faq",
+        "seo"
+      ],
+      "feature_columns": 3,
+      "faq_columns": 2,
+      "family": "compare-strip",
+      "moods": [
+        "direct",
+        "fast",
+        "comparison"
+      ],
+      "archetypes": [
+        "calculator",
+        "tool"
+      ],
+      "niches": [
+        "insurance",
+        "finance",
+        "quotes",
+        "switching"
+      ],
+      "keywords": [
+        "compare",
+        "choices",
+        "fast",
+        "matrix"
+      ],
+      "token_index": [
+        "calculator",
+        "choices",
+        "compare",
+        "comparison",
+        "direct",
+        "faq",
+        "fast",
+        "features",
+        "finance",
+        "first",
+        "insurance",
+        "matrix",
+        "metrics",
+        "proof",
+        "quick",
+        "quotes",
+        "seo",
+        "strip",
+        "switching",
+        "tool"
+      ]
+    },
+    "render_direction": "atlas-report",
+    "render_direction_name": "Atlas Report",
+    "page_blueprint": "dossier-rail",
+    "page_blueprint_name": "Dossier Rail",
+    "title": "Simulateur de Coût de Location de Véhicules Utilitaires en Argentine",
+    "tagline": "Estimez vos coûts de location",
+    "description": "Comparez les coûts de location de différents types de véhicules utilitaires (camionnettes, fourgons) pour des besoins professionnels en Argentine. Obtenez des estimations précises basées sur la durée, le kilométrage, le type de véhicule et les assurances.",
+    "feature_prefix": "Módulo",
+    "action": "Usar la herramienta",
+    "cta_primary": "Calculer le coût estimé",
+    "cta_secondary": "Leer la FAQ",
+    "inputs": [
+      {
+        "id": "amount",
+        "label": "Importe base",
+        "type": "number",
+        "placeholder": "7500",
+        "weight": 1.0
+      },
+      {
+        "id": "duration",
+        "label": "Duración estimada",
+        "type": "number",
+        "placeholder": "12",
+        "weight": 0.42
+      },
+      {
+        "id": "plan",
+        "label": "Nivel de servicio",
+        "type": "select",
+        "options": [
+          {
+            "label": "Esencial",
+            "value": 1.0
+          },
+          {
+            "label": "Performance",
+            "value": 1.18
+          },
+          {
+            "label": "Premium",
+            "value": 1.34
+          }
+        ],
+        "weight": 1.0
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Atlas Report",
+        "label": "Cadencia"
+      },
+      {
+        "value": "3",
+        "label": "Entradas"
+      },
+      {
+        "value": "Resultado recomendado",
+        "label": "Salida"
+      }
+    ],
+    "trust_labels": [
+      "Atlas Report",
+      "Calculer le coût estimé",
+      "Resultado recomendado",
+      "Utilidad inmediata",
+      "Estructura SEO clara"
+    ],
+    "result_label": "Resultado recomendado",
+    "result_unit": "EUR",
+    "runtime_mode": "insurance_estimator",
+    "page_variant": "console",
+    "faq_topic": "Simulateur de Coût de Location de Véhicules Utilitaires en Argentine",
+    "faq_entries": [
+      {
+        "question": "¿Por qué usar esta herramienta para Simulateur de Coût de Location de Véhicules Utilitaires en Argentine?",
+        "answer": "Ayuda a definir la necesidad rápidamente y a guiar hacia una siguiente acción clara en Argentina."
+      },
+      {
+        "question": "¿El resultado es inmediato?",
+        "answer": "Sí. La interfaz está pensada para devolver una respuesta rápida y clara desde la primera interacción."
+      },
+      {
+        "question": "¿La página está preparada para SEO?",
+        "answer": "Sí. La estructura combina utilidad, claridad editorial y señales de confianza sin recargar la experiencia."
+      }
+    ],
+    "seo_paragraphs": [
+      "Esta página está diseñada para captar una intención fuerte sobre Simulateur de Coût de Location de Véhicules Utilitaires en Argentine y convertirla en una acción medible en Argentina.",
+      "La estructura hero-first mejora la claridad, reduce fricción y funciona bien tanto en móvil como en escritorio.",
+      "La base se mantiene ligera para facilitar pruebas, QA continua y variaciones SEO repetibles."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Simulateur de Coût de Location de Véhicules Utilitaires en Argentine | Estimez vos coûts de location</title>\n    <meta name=\"description\" content=\"Comparez les coûts de location de différents types de véhicules utilitaires (camionnettes, fourgons) pour des besoins professionnels en Argentine. Obtenez des estimations précises basées sur la durée, le kilométrage, le type de véhicule et les assurances.\">\n    <style>\n        :root {\n            --primary-bg: #222831;\n            --secondary-bg: #393E46;\n            --text-color: #EEEEEE;\n            --accent-color: #00ADB5;\n            --border-color: #6D6D6D;\n            --font-family-headline: 'Arial Black', sans-serif;\n            --font-family-body: 'Arial', sans-serif;\n        }\n\n        body {\n            font-family: var(--font-family-body);\n            color: var(--text-color);\n            background-color: var(--primary-bg);\n            margin: 0;\n            padding: 0;\n            line-height: 1.6;\n            scroll-behavior: smooth;\n        }\n\n        header {\n            background-color: var(--secondary-bg);\n            padding: 2rem 0;\n            text-align: center;\n            border-bottom: 1px solid var(--border-color);\n        }\n\n        h1 {\n            font-family: var(--font-family-headline);\n            color: var(--accent-color);\n            font-size: 2.5rem;\n            margin-bottom: 0.5rem;\n        }\n\n        .summary {\n            font-size: 1.1rem;\n            max-width: 800px;\n            margin: 0 auto;\n            padding: 0 1rem;\n            color: #BBBBBB;\n        }\n\n        .container {\n            max-width: 1000px;\n            margin: 2rem auto;\n            padding: 0 1rem;\n            display: grid;\n            grid-template-columns: 1fr;\n            gap: 2rem;\n        }\n\n        @media (min-width: 768px) {\n            .container {\n                grid-template-columns: 2fr 1fr;\n            }\n        }\n\n        section {\n            background-color: var(--secondary-bg);\n            padding: 2rem;\n            border: 1px solid var(--border-color);\n            border-radius: 5px;\n            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\n        }\n\n        h2 {\n            font-family: var(--font-family-headline);\n            color: var(--accent-color);\n            font-size: 1.8rem;\n            border-bottom: 2px solid var(--accent-color);\n            padding-bottom: 0.5rem;\n            margin-top: 0;\n            margin-bottom: 1.5rem;\n        }\n\n        .form-group {\n            margin-bottom: 1.5rem;\n        }\n\n        label {\n            display: block;\n            margin-bottom: 0.5rem;\n            font-weight: bold;\n            color: #DDDDDD;\n        }\n\n        input[type=\"number\"],\n        select {\n            width: calc(100% - 20px);\n            padding: 0.75rem;\n            border: 1px solid var(--border-color);\n            border-radius: 4px;\n            background-color: var(--primary-bg);\n            color: var(--text-color);\n            font-size: 1rem;\n            box-sizing: border-box;\n        }\n\n        input[type=\"range\"] {\n            width: 100%;\n            -webkit-appearance: none;\n            height: 8px;\n            background: var(--primary-bg);\n            border-radius: 5px;\n            outline: none;\n            margin-top: 0.5rem;\n        }\n\n        input[type=\"range\"]::-webkit-slider-thumb {\n            -webkit-appearance: none;\n            appearance: none;\n            width: 20px;\n            height: 20px;\n            border-radius: 50%;\n            background: var(--accent-color);\n            cursor: pointer;\n            border: 2px solid var(--text-color);\n        }\n\n        button#tool-submit {\n            display: block;\n            width: 100%;\n            padding: 1rem;\n            background-color: var(--accent-color);\n            color: var(--primary-bg);\n            border: none;\n            border-radius: 4px;\n            font-size: 1.1rem;\n            font-weight: bold;\n            cursor: pointer;\n            transition: background-color 0.3s ease;\n        }\n\n        button#tool-submit:hover {\n            background-color: #007B80;\n        }\n\n        #tool-result {\n            margin-top: 2rem;\n            padding: 1.5rem;\n            background-color: var(--primary-bg);\n            border: 1px solid var(--accent-color);\n            border-radius: 5px;\n            min-height: 150px;\n        }\n\n        #tool-result h3 {\n            color: var(--accent-color);\n            font-family: var(--font-family-headline);\n            font-size: 1.5rem;\n            margin-top: 0;\n        }\n\n        #tool-result p {\n            margin-bottom: 0.5rem;\n        }\n\n        .result-item {\n            display: flex;\n            justify-content: space-between;\n            padding: 0.5rem 0;\n            border-bottom: 1px dashed var(--border-color);\n        }\n\n        .result-item:last-child {\n            border-bottom: none;\n        }\n\n        .result-label {\n            font-weight: bold;\n            color: #DDDDDD;\n        }\n\n        .result-value {\n            color: var(--text-color);\n        }\n\n        .tips-section {\n            background-color: var(--secondary-bg);\n            padding: 2rem;\n            border: 1px solid var(--border-color);\n            border-radius: 5px;\n            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\n        }\n\n        .tips-section h2 {\n            font-size: 1.5rem;\n            border-bottom: 1px solid var(--accent-color);\n            margin-bottom: 1rem;\n        }\n\n        .tips-section ul {\n            list-style: none;\n            padding: 0;\n        }\n\n        .tips-section li {\n            background-color: var(--primary-bg);\n            border: 1px solid var(--border-color);\n            padding: 1rem;\n            margin-bottom: 1rem;\n            border-radius: 4px;\n            display: flex;\n            align-items: flex-start;\n        }\n\n        .tips-section li:before {\n            content: \"✓\";\n            color: var(--accent-color);\n            font-weight: bold;\n            margin-right: 0.8rem;\n            font-size: 1.2em;\n        }\n\n        footer {\n            background-color: var(--primary-bg);\n            color: #BBBBBB;\n            text-align: center;\n            padding: 2rem 1rem;\n            margin-top: 3rem;\n            border-top: 1px solid var(--border-color);\n        }\n\n        .seo-section {\n            background-color: var(--primary-bg);\n            color: #AAAAAA;\n            padding: 2rem 1rem;\n            text-align: center;\n            border-top: 1px solid var(--border-color);\n        }\n\n        .seo-section h2 {\n            font-family: var(--font-family-headline);\n            color: var(--accent-color);\n            font-size: 1.5rem;\n            margin-bottom: 1rem;\n        }\n\n        .seo-section p {\n            margin-bottom: 1rem;\n            line-height: 1.8;\n            max-width: 800px;\n            margin-left: auto;\n            margin-right: auto;\n            text-align: justify;\n        }\n\n        .seo-section ul {\n            list-style: none;\n            padding: 0;\n            display: flex;\n            flex-wrap: wrap;\n            justify-content: center;\n            gap: 0.5rem 1.5rem;\n            margin-top: 2rem;\n        }\n\n        .seo-section li {\n            display: inline-block;\n            background-color: var(--secondary-bg);\n            border: 1px solid var(--border-color);\n            padding: 0.5rem 1rem;\n            border-radius: 20px;\n            font-size: 0.9rem;\n            color: var(--text-color);\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://simulateur-de-cout-de-location-de-vehicules-uti-bd1973ff.onrender.com\">\n    <meta property=\"og:title\" content=\"Simulateur de Coût de Location de Véhicules Utilitaires en Argentine\">\n    <meta property=\"og:description\" content=\"Comparez les coûts de location de différents types de véhicules utilitaires (camionnettes, fourgons) pour des besoins professionnels en Argentine. Obtenez des estimations précises basées sur la durée, le kilométrage, le type de véhicule et les assurances.\">\n    <meta property=\"og:url\" content=\"https://simulateur-de-cout-de-location-de-vehicules-uti-bd1973ff.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Simulateur de Coût de Location de Véhicules Utilitaires en Argentine\", \"description\": \"Comparez les coûts de location de différents types de véhicules utilitaires (camionnettes, fourgons) pour des besoins professionnels en Argentine. Obtenez des estimations précises basées sur la durée, le kilométrage, le type de véhicule et les assurances.\", \"url\": \"https://simulateur-de-cout-de-location-de-vehicules-uti-bd1973ff.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"simulateur-de-cout-de-location-de-vehicules-uti-bd1973ff\" data-runtime-mode=\"insurance_estimator\">\n    <header>\n        <h1>Simulateur de Coût de Location de Véhicules Utilitaires en Argentine</h1>\n        <p class=\"summary\">Optimisez vos dépenses professionnelles en Argentine. Calculez les coûts estimés pour la location de camionnettes et fourgons, en tenant compte de la durée, du kilométrage et des options d'assurance.</p>\n    </header>\n\n    <div class=\"container\">\n        <section>\n            <h2>Estimez vos coûts de location</h2>\n            <form id=\"tool-form\">\n                <div class=\"form-group\">\n                    <label for=\"duration\">Durée de location (jours)</label>\n                    <input type=\"number\" id=\"duration\" name=\"duration\" min=\"1\" max=\"365\" value=\"7\" required>\n                </div>\n\n                <div class=\"form-group\">\n                    <label for=\"mileage\">Kilométrage estimé (km)</label>\n                    <input type=\"range\" id=\"mileage\" name=\"mileage\" min=\"50\" max=\"5000\" value=\"500\">\n                    <span id=\"mileage-value\">500 km</span>\n                </div>\n\n                <div class=\"form-group\">\n                    <label for=\"vehicle-type\">Type de véhicule</label>\n                    <select id=\"vehicle-type\" name=\"vehicle-type\" required>\n                        <option value=\"van-small\">Fourgonnette (ex: Kangoo)</option>\n                        <option value=\"van-medium\">Fourgon moyen (ex: Partner/Berlingo)</option>\n                        <option value=\"pickup-small\">Pick-up léger (ex: Saveiro/Montana)</option>\n                        <option value=\"pickup-medium\">Pick-up moyen (ex: Hilux/Amarok)</option>\n                    </select>\n                </div>\n\n                <div class=\"form-group\">\n                    <label for=\"insurance\">Niveau d'assurance</label>\n                    <select id=\"insurance\" name=\"insurance\" required>\n                        <option value=\"basic\">Standard (tiers)</option>\n                        <option value=\"full\">Complète (tous risques)</option>\n                    </select>\n                </div>\n\n                <button type=\"submit\" id=\"tool-submit\" data-affiliate-slot=\"calculate-cost\">Calculer le coût estimé</button>\n            </form>\n\n            <div id=\"tool-result\">\n                <h3 id=\"result-headline\">Votre estimation budgétaire</h3>\n                <p>Veuillez remplir le formulaire ci-dessus pour obtenir une estimation détaillée.</p>\n            </div>\n        </section>\n\n        <section class=\"tips-section\">\n            <h2>Conseils pour la Location en Argentine</h2>\n            <ul>\n                <li>\n                    <strong>Vérifiez les kilomètres inclus :</strong> Assurez-vous de comprendre les limites de kilométrage et les coûts supplémentaires en cas de dépassement.\n                </li>\n                <li>\n                    <strong>Comprenez l'assurance :</strong> Les routes argentines peuvent être exigeantes. Une bonne couverture est cruciale.\n                </li>\n                <li>\n                    <strong>Demandez un devis détaillé :</strong> Incluez les frais de péage, les taxes et le carburant pour une image complète.\n                </li>\n                <li>\n                    <strong>Planifiez à l'avance :</strong> Surtout pendant les périodes de forte demande, la réservation anticipée assure une meilleure disponibilité et des tarifs potentiellement inférieurs.\n                </li>\n            </ul>\n        </section>\n    </div>\n\n    <section class=\"seo-section\">\n        <h2>Optimiser vos Coûts de Location de Véhicules Utilitaires en Argentine</h2>\n        <p>Pour les entreprises et professionnels indépendants en Argentine, la gestion efficace des coûts de transport est primordiale. Notre simulateur vous aide à anticiper les dépenses liées à la location de véhicules utilitaires, qu'il s'agisse de camionnettes compactes ou de pick-ups robustes, essentiels pour la logistique et les opérations quotidiennes. Que votre activité se situe à Buenos Aires, Córdoba, Rosario ou ailleurs dans le pays, une planification budgétaire précise est la clé d'une gestion financière saine. Évitez les surprises et prenez des décisions éclairées pour vos besoins de flotte temporaire ou à long terme.</p>\n        <p>La transparence des coûts est notre priorité. Comparez facilement les options en fonction de la durée de votre projet, du kilométrage prévu et du type de véhicule le plus adapté à vos marchandises ou équipements. L'intégration des différentes options d'assurance vous permet également de mesurer l'impact de cette protection indispensable sur votre budget total. Notre outil est conçu pour vous offrir une vue d'ensemble claire, vous permettant de choisir la solution de location la plus avantageuse et sécurisée pour votre entreprise en Argentine.</p>\n        <ul>\n            <li>Location camionnette Argentine</li>\n            <li>Coût location utilitaire Buenos Aires</li>\n            <li>Prix location fourgon Córdoba</li>\n            <li>Simulateur location pick-up Rosario</li>\n            <li>Comparateur location véhicules professionnels Argentine</li>\n            <li>Tarifs location flotte entreprise</li>\n            <li>Assurance location utilitaire Argentine</li>\n            <li>Kilométrage location véhicule commercial</li>\n            <li>Location transport marchandises Argentine</li>\n            <li>Devis location camionnette travail</li>\n        </ul>\n    </section>\n\n    <footer>\n        <p>&copy; 2023 Simulateur de Coût Utilitaires. Tous droits réservés.</p>\n    </footer>\n\n    <script>\n        document.addEventListener('DOMContentLoaded', () => {\n            const durationInput = document.getElementById('duration');\n            const mileageInput = document.getElementById('mileage');\n            const mileageValueSpan = document.getElementById('mileage-value');\n            const vehicleTypeSelect = document.getElementById('vehicle-type');\n            const insuranceSelect = document.getElementById('insurance');\n            const form = document.getElementById('tool-form');\n            const resultDiv = document.getElementById('tool-result');\n\n            // Update mileage value display\n            mileageInput.addEventListener('input', () => {\n                mileageValueSpan.textContent = `${mileageInput.value} km`;\n            });\n\n            form.addEventListener('submit', (e) => {\n                e.preventDefault();\n\n                const duration = parseInt(durationInput.value);\n                const mileage = parseInt(mileageInput.value);\n                const vehicleType = vehicleTypeSelect.value;\n                const insurance = insuranceSelect.value;\n\n                // Base rates in ARS per day (fictional but representative)\n                const baseRates = {\n                    'van-small': 8000,   // Renault Kangoo\n                    'van-medium': 12000, // Peugeot Partner / Citroën Berlingo\n                    'pickup-small': 10000, // VW Saveiro / Fiat Strada\n                    'pickup-medium': 18000 // Toyota Hilux / Ford Ranger\n                };\n\n                // Per km cost after a certain free mileage (fictional)\n                const kmRates = {\n                    'van-small': 25,\n                    'van-medium': 35,\n                    'pickup-small': 30,\n                    'pickup-medium': 45\n                };\n\n                // Free km per day (fictional)\n                const freeKmPerDay = 100;\n\n                // Insurance multipliers (fictional)\n                const insuranceMultipliers = {\n                    'basic': 1.0,\n                    'full': 1.35\n                };\n\n                // Calculate base cost\n                let dailyRate = baseRates[vehicleType] || 0;\n                let totalBaseCost = dailyRate * duration;\n\n                // Calculate mileage cost\n                let totalFreeKm = freeKmPerDay * duration;\n                let excessKm = Math.max(0, mileage - totalFreeKm);\n                let totalMileageCost = excessKm * (kmRates[vehicleType] || 0);\n\n                // Apply insurance\n                let totalCostBeforeInsurance = totalBaseCost + totalMileageCost;\n                let finalCost = totalCostBeforeInsurance * (insuranceMultipliers[insurance] || 1.0);\n\n                // Add a small VAT or administrative fee (fictional)\n                let vatAndAdmin = finalCost * 0.21; // 21% VAT + some admin\n                finalCost += vatAndAdmin;\n\n                // Render result\n                resultDiv.innerHTML = `\n                    <h3>Votre estimation budgétaire détaillée</h3>\n                    <div class=\"result-item\">\n                        <span class=\"result-label\">Type de véhicule:</span>\n                        <span class=\"result-value\">${vehicleTypeSelect.options[vehicleTypeSelect.selectedIndex].text}</span>\n                    </div>\n                    <div class=\"result-item\">\n                        <span class=\"result-label\">Durée de location:</span>\n                        <span class=\"result-value\">${duration} jours</span>\n                    </div>\n                    <div class=\"result-item\">\n                        <span class=\"result-label\">Kilométrage total:</span>\n                        <span class=\"result-value\">${mileage} km</span>\n                    </div>\n                    <div class=\"result-item\">\n                        <span class=\"result-label\">Coût de base (${duration} jours):</span>\n                        <span class=\"result-value\">ARS ${totalBaseCost.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>\n                    </div>\n                    <div class=\"result-item\">\n                        <span class=\"result-label\">Coût kilométrage excédentaire:</span>\n                        <span class=\"result-value\">ARS ${totalMileageCost.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>\n                    </div>\n                    <div class=\"result-item\">\n                        <span class=\"result-label\">Assurance (${insuranceSelect.options[insuranceSelect.selectedIndex].text}):</span>\n                        <span class=\"result-value\">x ${insuranceMultipliers[insurance].toFixed(2)}</span>\n                    </div>\n                    <div class=\"result-item\">\n                        <span class=\"result-label\">TVA & Frais administratifs:</span>\n                        <span class=\"result-value\">ARS ${vatAndAdmin.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>\n                    </div>\n                    <hr style=\"border-color: var(--border-color); margin: 1rem 0;\">\n                    <div class=\"result-item\">\n                        <span class=\"result-label\"><strong>Coût total estimé:</strong></span>\n                        <span class=\"result-value\"><strong>ARS ${finalCost.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></span>\n                    </div>\n                    <p style=\"font-size: 0.9em; color: #aaa; margin-top: 1rem;\">Cette estimation est indicative et peut varier selon le fournisseur et les conditions spécifiques du marché en Argentine.</p>\n                `;\n            });\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.removeAttribute(\"rel\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    const currentValue = normalize(field.value);\n    if (tag === \"select\") {\n      if (currentValue) return;\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      if (currentValue) return;\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      if (currentValue) return;\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      if (currentValue) return;\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      if (currentValue) return;\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      if (currentValue) return;\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      if (currentValue) return;\n      field.value = sampleNumber(field);\n      return;\n    }\n    if (currentValue) return;\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"Result area was not found.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Native form submission updated the result area.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"Result area did not render usable output.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Primary tool form was not found.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}
